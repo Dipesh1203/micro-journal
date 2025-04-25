@@ -18,7 +18,10 @@ const ViewEntry: React.FC = () => {
     const fetchEntry = async () => {
       try {
         setLoading(true);
-        const res = await axios.get(`http://localhost:3000/api/journal/${id}`);
+        const res = await axios.get(
+          `${import.meta.env.VITE_API_URL}/journal/${id}` ||
+            `http://localhost:3000/api/journal/${id}`
+        );
         setEntry(res.data);
         console.log(res.data);
         setLoading(false);
@@ -34,7 +37,10 @@ const ViewEntry: React.FC = () => {
 
   const handleDelete = async () => {
     try {
-      await axios.delete(`http://localhost:3000/api/journal/${id}`);
+      await axios.delete(
+        `${import.meta.env.VITE_API_URL}/journal/${id}` ||
+          `http://localhost:3000/api/journal/${id}`
+      );
       navigate("/entries");
     } catch (err) {
       console.error("Error deleting entry:", err);

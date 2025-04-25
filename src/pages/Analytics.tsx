@@ -21,21 +21,24 @@ const Analytics: React.FC = () => {
 
         // Fetch emotion counts
         const emotionsRes = await axios.get(
-          "http://localhost:3000/api/analytics/emotions"
+          `${import.meta.env.VITE_API_URL}/analytics/emotions` ||
+            "http://localhost:3000/api/analytics/emotions"
         );
         setEmotionCounts(emotionsRes.data);
         console.log(emotionsRes);
 
         // Fetch weekly emotion data
         const weeklyRes = await axios.get(
-          "http://localhost:3000/api/analytics/weekly"
+          `${import.meta.env.VITE_API_URL}/analytics/weekly` ||
+            "http://localhost:3000/api/analytics/weekly"
         );
         console.log(weeklyRes);
         setWeeklyData(weeklyRes.data);
 
         // Fetch monthly emotion data
         const monthlyRes = await axios.get(
-          "http://localhost:3000/api/analytics/monthly"
+          `${import.meta.env.VITE_API_URL}/analytics/monthly` ||
+            "http://localhost:3000/api/analytics/monthly"
         );
         console.log(monthlyRes);
         setMonthlyData(monthlyRes.data);

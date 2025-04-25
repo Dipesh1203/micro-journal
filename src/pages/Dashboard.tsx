@@ -22,13 +22,15 @@ const Dashboard: React.FC = () => {
 
         // Fetch recent entries
         const entriesRes = await axios.get(
-          "http://localhost:3000/api/journal?limit=3"
+          `${import.meta.env.VITE_API_URL}/journal?limit=3` ||
+            "http://localhost:3000/api/journal?limit=3"
         );
         setRecentEntries(entriesRes.data.slice(0, 3));
 
         // Fetch emotion analytics
         const analyticsRes = await axios.get(
-          "http://localhost:3000/api/analytics/emotions"
+          `${import.meta.env.VITE_API_URL}/analytics/emotions` ||
+            "http://localhost:3000/api/analytics/emotions"
         );
         setEmotionData(analyticsRes.data);
 

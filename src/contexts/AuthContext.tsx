@@ -37,8 +37,8 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   const [user, setUser] = useState<User | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-
-  const API_URL = import.meta.env.BACKEND_URL || "http://localhost:3000/api";
+  const API_URL =
+    `${import.meta.env.VITE_API_URL}` || "http://localhost:3000/api";
 
   // Set auth token for axios requests
   const setAuthToken = (token: string | null) => {

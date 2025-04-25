@@ -37,10 +37,14 @@ const NewEntry: React.FC = () => {
       setLoading(true);
       setError("");
 
-      await axios.post("http://localhost:3000/api/journal", {
-        content,
-        userEmotion: userEmotion || undefined,
-      });
+      await axios.post(
+        `${import.meta.env.VITE_API_URL}/journal` ||
+          "http://localhost:3000/api/journal",
+        {
+          content,
+          userEmotion: userEmotion || undefined,
+        }
+      );
 
       navigate("/entries");
     } catch (err) {

@@ -21,7 +21,10 @@ const JournalEntries: React.FC = () => {
     const fetchEntries = async () => {
       try {
         setLoading(true);
-        const res = await axios.get("http://localhost:3000/api/journal");
+        const res = await axios.get(
+          `${import.meta.env.VITE_API_URL}/journal` ||
+            "http://localhost:3000/api/journal"
+        );
         setEntries(res.data);
         console.log(res.data);
         setFilteredEntries(res.data);
