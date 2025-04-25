@@ -25,7 +25,7 @@ const Navbar: React.FC = () => {
             <Link to="/" className="flex-shrink-0 flex items-center">
               <BookOpen className="h-8 w-8 text-primary-500" />
               <span className="ml-2 text-xl font-bold text-gray-900">
-                EmoJournal
+                MicroJournal
               </span>
             </Link>
           </div>
