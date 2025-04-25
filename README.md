@@ -13,6 +13,11 @@ A modern journaling application that helps users track their emotional well-bein
   - Weekly and monthly emotion trends
   - Personal emotional pattern insights
 - **Responsive Design**: Beautiful, mobile-friendly interface
+![image](https://github.com/user-attachments/assets/7cfe6168-7f1a-415e-93c1-7c6a95c9190a)
+![image](https://github.com/user-attachments/assets/eb265eed-79de-4e9b-b8e7-453f086fa5d5)
+![image](https://github.com/user-attachments/assets/e3f0fc1b-4632-453e-8dbe-53aff314e932)
+
+
 
 ## Tech Stack
 
