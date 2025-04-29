@@ -172,7 +172,9 @@ const Analytics: React.FC = () => {
                     // @ts-ignore
                     const dayData = weeklyData[date] ?? "";
                     const dominantEmotion = Object.entries(dayData).reduce(
-                      (max, [emotion, count]:[string,number]) =>
+                      // @ts-ignore
+                      (max, [emotion, count]: [string, number]) =>
+                        // @ts-ignore
                         count > max[1] ? [emotion, count] : max,
                       ["", 0]
                     )[0];
