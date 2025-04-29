@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "build": "tsc -b && vite build && pnpm run prepare-server",
+    "prepare-server": "cp -r server dist/server",
     "lint": "eslint .",
     "preview": "vite preview",
     "server": "node server/index.js",
