@@ -5,6 +5,19 @@ import { analyzeEmotion } from "../utils/sentimentAnalyzer.js";
 
 const router = express.Router();
 
+router.get("/test", async (req, res) => {
+  const { content, date, userEmotion } = req.body;
+
+  try {
+    // Analyze text content for emotion
+
+    res.json({ data: "Working ...." });
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).send("Server error");
+  }
+});
+
 //   POST api/journal
 //Description:   Create a journal entry
 

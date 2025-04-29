@@ -13,7 +13,6 @@ const Dashboard: React.FC = () => {
   const [recentEntries, setRecentEntries] = useState([]);
   const [emotionData, setEmotionData] = useState({});
   const [loading, setLoading] = useState(true);
-  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchDashboardData = async () => {
@@ -99,6 +98,7 @@ const Dashboard: React.FC = () => {
               {recentEntries.length > 0 ? (
                 <div className="space-y-4">
                   {recentEntries.map((entry) => (
+                    // @ts-ignore
                     <JournalCard key={entry._id} entry={entry} />
                   ))}
                 </div>
