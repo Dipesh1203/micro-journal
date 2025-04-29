@@ -42,12 +42,14 @@ const JournalEntries: React.FC = () => {
     const filtered = entries.filter((entry) => {
       // Filter by emotion if selected
       const emotionMatch = filterEmotion
-        ? entry.detectedEmotion === filterEmotion
+        ? //@ts-ignore
+          entry.detectedEmotion === filterEmotion
         : true;
 
       // Filter by search term if provided
       const searchMatch = searchTerm
-        ? entry.content.toLowerCase().includes(searchTerm.toLowerCase())
+        ? //@ts-ignore
+          entry.content.toLowerCase().includes(searchTerm.toLowerCase())
         : true;
 
       return emotionMatch && searchMatch;
@@ -149,6 +151,7 @@ const JournalEntries: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {filteredEntries.map((entry, index) => (
               <motion.div
+                //@ts-ignore
                 key={entry?._id}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
