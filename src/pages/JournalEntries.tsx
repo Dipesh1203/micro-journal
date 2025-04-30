@@ -83,7 +83,7 @@ const JournalEntries: React.FC = () => {
           </div>
           <Link
             to="/entries/new"
-            className="mt-4 md:mt-0 inline-flex items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-black dark:text-white bg-primary-500 hover:bg-primary-600 focus:outline-none transition-colors"
+            className="mt-4 md:mt-0 inline-flex items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium bg-black text-black dark:text-white bg-primary-500 hover:bg-primary-600 focus:outline-none transition-colors"
           >
             <Edit className="mr-2 h-4 w-4" />
             New Entry

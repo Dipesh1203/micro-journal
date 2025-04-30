@@ -23,6 +23,7 @@ router.get("/test", async (req, res) => {
 
 router.post("/", auth, async (req, res) => {
   const { content, date, userEmotion } = req.body;
+  console.log("===", content, date, userEmotion);
 
   try {
     // Analyze text content for emotion
@@ -34,7 +35,7 @@ router.post("/", auth, async (req, res) => {
       content,
       detectedEmotion,
       userEmotion,
-      date: new Date(date) || new Date(),
+      date: date || Date.now(),
     });
 
     // Save entry to database

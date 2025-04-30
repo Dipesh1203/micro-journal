@@ -36,13 +36,14 @@ const NewEntry: React.FC = () => {
     try {
       setLoading(true);
       setError("");
-
+      console.log(import.meta.env.VITE_API_URL);
       await axios.post(
         `${import.meta.env.VITE_API_URL}/journal` ||
           "http://localhost:3000/api/journal",
         {
           content,
           userEmotion: userEmotion || undefined,
+          date: new Date().toISOString(),
         }
       );
 
@@ -117,7 +118,7 @@ const NewEntry: React.FC = () => {
                       }
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
-                      className={`px-4 py-2 rounded-full transition-all
+                      className={`bg-black px-4 py-2 rounded-full transition-all
                         ${
                           userEmotion === emotion
                             ? "ring-2 ring-offset-1 ring-primary-500"
